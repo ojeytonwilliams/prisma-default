@@ -12,3 +12,8 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+
+model Test {
+  id       String @id @map("_id") @db.ObjectId
+  buggyInt Int    @default(10)
+}
