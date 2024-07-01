@@ -5,6 +5,12 @@ const prisma = new PrismaClient();
 async function main() {
   const test = await prisma.test.findMany();
   console.log(test);
+  try {
+    const testDate = await prisma.dateTimeTest.findMany();
+    console.log(testDate);
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 main()

@@ -14,6 +14,13 @@ datasource db {
 }
 
 model Test {
-  id       String @id @map("_id") @db.ObjectId
-  buggyInt Int    @default(10)
+  id        String  @id @map("_id") @db.ObjectId
+  buggyInt  Int     @default(10)
+  buggyStr  String  @default("hello")
+  buggyBool Boolean @default(true)
+}
+
+model DateTimeTest {
+  id     String   @id @map("_id") @db.ObjectId
+  throws DateTime @default(now())
 }
